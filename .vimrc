@@ -4,8 +4,8 @@
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 
 " }}}
 
@@ -20,7 +20,7 @@ Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
-" Plugin configurations {{{2
+" Plcugin configurations {{{2
 "
 " NERDTREE keymaps {{{3
 map <leader>r :NERDTreeFind<CR>
@@ -31,7 +31,9 @@ map <silent> <C-D> :NERDTreeToggle<CR>
 let g:airline#extensions#tabline#enabled = 1
 "}}}
 
-" solaraized theme {{{3
+" solcaraized theme {{{3
+" we want to load the color scheme it immidiately
+call plug#load('vim-colors-solarized')
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
