@@ -17,6 +17,8 @@ Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
 Plug 'easymotion/vim-easymotion'
 Plug 'altercation/vim-colors-solarized'
+Plug 'ervandew/supertab'
+Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
