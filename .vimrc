@@ -4,8 +4,9 @@
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+
 " }}}
 
 call plug#begin('~/.vim/plugged')
@@ -21,7 +22,7 @@ call plug#end()
 
 " Plugin configurations {{{2
 "
-" NERDTREE keymaps {{{ 3
+" NERDTREE keymaps {{{3
 map <leader>r :NERDTreeFind<CR>
 map <silent> <C-D> :NERDTreeToggle<CR>
 " }}}
@@ -30,7 +31,7 @@ map <silent> <C-D> :NERDTreeToggle<CR>
 let g:airline#extensions#tabline#enabled = 1
 "}}}
 
-" solaraized theme {{{
+" solaraized theme {{{3
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
@@ -38,9 +39,6 @@ colorscheme solarized
 
 " }}}
 
-"
-" Specific plugin configuration are located under .vim/after/plugin/custom_plug_mappings.vim
-"
 " }}}
 
 " Tabs {{{
