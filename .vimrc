@@ -19,6 +19,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'altercation/vim-colors-solarized'
 Plug 'ervandew/supertab'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'chase/vim-ansible-yaml'
+Plug 'bling/vim-airline'
+Plug 'glench/vim-jinja2-syntax'
 
 call plug#end()
 
@@ -87,13 +90,16 @@ augroup configgroup
         autocmd FileType ruby setlocal softtabstop=2
         autocmd FileType ruby setlocal commentstring=#\ %s
         autocmd FileType python setlocal commentstring=#\ %s
+        autocmd FileType json setlocal foldmethod=syntax
+        autocmd FileType json setlocal foldcolumn=3
         autocmd BufEnter *.cls setlocal filetype=java
         autocmd BufEnter *.zsh-theme setlocal filetype=zsh
         autocmd BufEnter Makefile setlocal noexpandtab
         autocmd BufEnter *.sh setlocal tabstop=2
         autocmd BufEnter *.sh setlocal shiftwidth=2
         autocmd BufEnter *.sh setlocal softtabstop=2
-        " Boxes integration
+
+        " Boxes integration {{{
         autocmd BufEnter * nmap ,mc !!boxes -d pound-cmt<CR>
         autocmd BufEnter * vmap ,mc !boxes -d pound-cmt<CR>
         autocmd BufEnter * nmap ,xc !!boxes -d pound-cmt -r<CR>
@@ -122,6 +128,7 @@ augroup configgroup
         autocmd BufEnter .vimrc*,.exrc vmap ,mc !boxes -d vim-cmt<CR>
         autocmd BufEnter .vimrc*,.exrc nmap ,xc !!boxes -d vim-cmt -r<CR>
         autocmd BufEnter .vimrc*,.exrc vmap ,xc !boxes -d vim-cmt -r<CR>
+        " }}}
 augroup END
 
 " strips trailing whitespace at the end of files. this
