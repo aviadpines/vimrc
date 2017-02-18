@@ -22,6 +22,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'chase/vim-ansible-yaml'
 Plug 'bling/vim-airline'
 Plug 'glench/vim-jinja2-syntax'
+Plug 'tmhedberg/SimpylFold'
+Plug 'tpope/vim-fugitive'
+Plug 'powerline/powerline' "needed for fugitive
 
 call plug#end()
 
@@ -34,6 +37,7 @@ map <silent> <C-D> :NERDTreeToggle<CR>
 
 " airline properties {{{3
 let g:airline#extensions#tabline#enabled = 1
+set laststatus=2
 "}}}
 
 " solcaraized theme {{{3
@@ -146,6 +150,7 @@ endfunction
 
 " Misc {{{
 set foldmethod=marker
+set nu
 " }}}
 
 " To unfold, move cursor to the section and hit <SPACE>
