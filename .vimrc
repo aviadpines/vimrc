@@ -25,11 +25,12 @@ Plug 'glench/vim-jinja2-syntax'
 Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-fugitive'
 Plug 'powerline/powerline' "needed for fugitive
+Plug 'mbbill/undotree'
 
 call plug#end()
 
-" Plcugin configurations {{{2
-"
+" Plugin configurations {{{2
+
 " NERDTREE keymaps {{{3
 map <leader>r :NERDTreeFind<CR>
 map <silent> <C-D> :NERDTreeToggle<CR>
@@ -39,6 +40,10 @@ map <silent> <C-D> :NERDTreeToggle<CR>
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 "}}}
+
+" Undotree {{{
+nnoremap <F5> :UndotreeToggle<cr>
+" }}}
 
 " solcaraized theme {{{3
 " we want to load the color scheme it immidiately
@@ -151,6 +156,9 @@ endfunction
 " Misc {{{
 set foldmethod=marker
 set nu
-" }}}
+" Allow saving of files as sudo when I forgot to start vim using sudo by using w!!
+cmap w!! w !sudo tee > /dev/null %
+
+ " }}}
 
 " To unfold, move cursor to the section and hit <SPACE>
