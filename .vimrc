@@ -1,6 +1,6 @@
 " vim-plug {{{1
 
-" Automatic installation {{{
+" Vim-Plug automatic installation {{{
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -26,6 +26,7 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-fugitive'
 Plug 'powerline/powerline' "needed for fugitive
 Plug 'mbbill/undotree'
+Plug 'nathanaelkane/vim-indent-guides'
 
 call plug#end()
 
@@ -39,9 +40,9 @@ map <silent> <C-D> :NERDTreeToggle<CR>
 " airline properties {{{3
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
-"}}}
+"}}} 
 
-" Undotree {{{
+" Undotree {{{3
 nnoremap <F5> :UndotreeToggle<cr>
 " }}}
 
@@ -52,6 +53,16 @@ set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
 " }}}
+
+" Indent guides {{{3
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+"hi IndentGuidesEven ctermbg=238
+"hi IndentGuidesOdd ctermbg=236
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=238
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=236
+" }}} 
 
 " }}}
 
