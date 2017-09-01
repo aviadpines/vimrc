@@ -116,6 +116,7 @@ augroup configgroup
         autocmd BufEnter *.sh setlocal tabstop=2
         autocmd BufEnter *.sh setlocal shiftwidth=2
         autocmd BufEnter *.sh setlocal softtabstop=2
+        autocmd BufEnter *.sshconfig setlocal filetype=sshconfig 
 
         " Boxes integration {{{
         autocmd BufEnter * nmap ,mc !!boxes -d pound-cmt<CR>
